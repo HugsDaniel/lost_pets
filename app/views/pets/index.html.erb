@@ -4,4 +4,10 @@
   <h3> <%= pet.name %> </h3>
   <p> <%= pet.species %> </p>
   <p> Found on <%= pet.found_date %> </p>
+  <%= link_to "See details", pet_path(pet) %>
 <% end %>
+
+
+<!--
+   - pet_path(pet) <==> "/pets/#{pet.id}"
+   -->
