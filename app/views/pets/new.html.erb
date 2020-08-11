@@ -1,0 +1,19 @@
+<%= form_for(@pet) do |f| %>
+  <% if @pet.errors.any? %>
+    <%= @pet.errors.messages %>
+  <% end %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :species %>
+  <%= f.text_field :species %>
+
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+
+  <%= f.label :found_date %>
+  <%= f.date_field :found_date %>
+
+  <%= f.submit %>
+<% end %>
