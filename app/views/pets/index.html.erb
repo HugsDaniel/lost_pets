@@ -1,0 +1,7 @@
+<h1>All pets</h1>
+
+<% @pets.each do |pet| %>
+  <h3> <%= pet.name %> </h3>
+  <p> <%= pet.species %> </p>
+  <p> Found on <%= pet.found_date %> </p>
+<% end %>
