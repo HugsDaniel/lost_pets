@@ -1,4 +1,6 @@
 class PetsController < ApplicationController
+  before_action :set_pet, only: [:show, :edit, :update, :destroy]
+
   def index
     # Récupérer tous les pets et les stocker dans une variable d'instance
     @pets = Pet.all
@@ -6,7 +8,6 @@ class PetsController < ApplicationController
 
   def show
     # puts params => {"controller"=>"pets", "action"=>"show", "id"=>"1"}
-    @pet = Pet.find(params[:id])
   end
 
   def new
@@ -25,7 +26,26 @@ class PetsController < ApplicationController
     # 3. Rediriger vers la page de détails du nouveau pet
   end
 
+  def edit
+  end
+
+  def update
+    @pet.update(pet_params)
+
+    # if @pet.save ....
+  end
+
+  def destroy
+    @pet.destroy
+
+    redirect_to pets_path
+  end
+
   private
+
+  def set_pet
+    @pet = Pet.find(params[:id])
+  end
 
   def pet_params
     params.require(:pet).permit(:name, :species, :address, :found_date)

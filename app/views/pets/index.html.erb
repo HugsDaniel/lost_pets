@@ -5,6 +5,8 @@
   <p> <%= pet.species %> </p>
   <p> Found on <%= pet.found_date %> </p>
   <%= link_to "See details", pet_path(pet) %>
+  <%= link_to "DESTROY", pet_path(pet), method: :delete %>
+  <%#= link_to "Mark as done", mark_task(task), method: :patch %>
 <% end %>
 
 
